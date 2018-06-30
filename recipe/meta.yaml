@@ -15,23 +15,11 @@ source:
    # - fix.patch
 
 build:
-  # noarch_python: True
-  # preserve_egg_dir: True
-  # entry_points:
-    # Put any entry points (scripts to be generated automatically) here. The
-    # syntax is module:function.  For example
-    #
-    # - multiprocess = multiprocess:main
-    #
-    # Would create an entry point called multiprocess that calls multiprocess.main()
-
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  number: 1
+  number: 2
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - dill >=0.2.6
@@ -60,9 +48,10 @@ test:
     # - nose
 
 about:
-  home: http://developer.berlios.de/projects/pyprocessing
+  home: http://github.com/uqfoundation/multiprocess
   license: BSD
-  summary: 'Package for using processes which mimics the threading module'
+  license_family: BSD
+  summary: better multiprocessing and multithreading in python
 
 # See
 # http://docs.continuum.io/conda/build.html for
