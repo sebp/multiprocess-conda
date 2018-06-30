@@ -17,7 +17,6 @@ install:
   - cmd: conda update --yes --quiet conda conda-env
   - cmd: conda config --set show_channel_urls true
   - cmd: conda config --set add_pip_as_python_dependency false
-  - cmd: conda config --add channels sebp
   - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
   - cmd: conda install -n root --yes --quiet anaconda-client conda-build setuptools
   - cmd: conda info
