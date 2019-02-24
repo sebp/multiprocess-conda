@@ -8,7 +8,7 @@ environment:
       CONDA_PY: "36"
       CONDA_INSTALL_LOCN: "C:\\Miniconda36-x64"
   BINSTAR_TOKEN:
-    secure: BBz5U02FsmvS62gAIvfa+c4AryY5uYgisfygQMpbYEdny1KrEMTL18FdkvW4Z3vV
+    secure: DGPGrFqoxtMtPBg/+wuwyiKW16oKg6EVgaJsuH3i8Ho+MIQ5WvWhnr82Y0FG5RuC
 
 # We always use a 64-bit machine.
 platform:
