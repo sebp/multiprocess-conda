@@ -32,14 +32,9 @@ requirements:
 test:
   # Python imports
   imports:
+    - _multiprocess
     - multiprocess
     - multiprocess.dummy
-
-  source_files:
-    - py3.4/multiprocess/tests/*
-    - py3.5/multiprocess/tests/*
-    - py3.6/multiprocess/tests/*
-    - py3.7/multiprocess/tests/*
 
   # commands:
     # You can put test commands to be run here.  Use this to test that the
