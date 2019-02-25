@@ -1,39 +1,45 @@
 {% set name = "multiprocess" %}
-{% set version = "0.70.5" %}
-{% set sha256 = "c4c196f3c4561dc1d78139c3e73709906a222d2fc166ef3eef895d8623df7267" %}
+{% set version = "0.70.6.1" %}
+{% set sha256 = "985d2faa28def907e303b4222b01281d2dcd3baa0fe53a4a0178ac63be62e5c6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.zip
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 #  patches:
    # List any patch files here
    # - fix.patch
 
 build:
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   host:
     - python
     - setuptools
-    - dill >=0.2.6
+    - dill >=0.2.8.2
     - {{ compiler('c') }}
 
   run:
     - python
-    - dill >=0.2.6
+    - dill >=0.2.8.2
 
 test:
   # Python imports
   imports:
     - multiprocess
     - multiprocess.dummy
+
+  source_files:
+    - py3.4/multiprocess/tests/*
+    - py3.5/multiprocess/tests/*
+    - py3.6/multiprocess/tests/*
+    - py3.7/multiprocess/tests/*
 
   # commands:
     # You can put test commands to be run here.  Use this to test that the
@@ -48,10 +54,12 @@ test:
     # - nose
 
 about:
-  home: http://github.com/uqfoundation/multiprocess
+  home: https://pypi.org/project/multiprocess
   license: BSD
   license_family: BSD
+  license_file: LICENSE
   summary: better multiprocessing and multithreading in python
+  dev_url: http://github.com/uqfoundation/multiprocess
 
 # See
 # http://docs.continuum.io/conda/build.html for
