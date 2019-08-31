@@ -1,6 +1,6 @@
 {% set name = "multiprocess" %}
-{% set version = "0.70.6.1" %}
-{% set sha256 = "985d2faa28def907e303b4222b01281d2dcd3baa0fe53a4a0178ac63be62e5c6" %}
+{% set version = "0.70.8" %}
+{% set sha256 = "fc6b2d8f33e7d437a82c6d1c2f1673ae20a271152a1ac6a18571d10308de027d" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ source:
    # - fix.patch
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -24,10 +24,10 @@ requirements:
   host:
     - python
     - setuptools
-    - dill >=0.2.8.2
+    - dill >=0.3.0
   run:
     - python
-    - dill >=0.2.8.2
+    - dill >=0.3.0
 
 test:
   # Python imports
