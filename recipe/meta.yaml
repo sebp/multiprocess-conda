@@ -1,6 +1,6 @@
 {% set name = "multiprocess" %}
-{% set version = "0.70.8" %}
-{% set sha256 = "fc6b2d8f33e7d437a82c6d1c2f1673ae20a271152a1ac6a18571d10308de027d" %}
+{% set version = "0.70.11.1" %}
+{% set sha256 = "9d5e417f3ebce4d027a3c900995840f167f316d9f73c0a7a1fbb4ac0116298d0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
   sha256: {{ sha256 }}
 #  patches:
    # List any patch files here
@@ -24,10 +24,10 @@ requirements:
   host:
     - python
     - setuptools
-    - dill >=0.3.0
+    - dill >=0.3.3
   run:
     - python
-    - dill >=0.3.0
+    - dill >=0.3.3
 
 test:
   # Python imports
